@@ -34,7 +34,7 @@ const FormHome = () => {
           </p>
         </div>
         <div className="mt-10 flex items-center justify-center gap-4">
-          <Link href="/create" className="text-muted-foreground">
+          <Link href="/dashboard" className="text-muted-foreground">
             <ShinyButton>
               <p className="font-semibold italic text-primary-foreground">
                 🍇 Comece Agora
