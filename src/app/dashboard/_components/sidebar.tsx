@@ -16,11 +16,11 @@ import {
   CircleHelp,
   FolderClosedIcon,
   HomeIcon,
-  LogOut,
   SettingsIcon,
 } from "lucide-react";
-import Link from "next/link";
+
 import { usePathname } from "next/navigation";
+import { UserDropdown } from "./userdropdown";
 
 const MainSidebar = () => {
   const pathname = usePathname();
@@ -36,15 +36,24 @@ const MainSidebar = () => {
       <DashboardSidebarMain className="flex flex-grow flex-col">
         <DashboardSidebarNav>
           <DashboardSidebarNavMain>
-            <DashboardSidebarNavLink href="" active={isActive("/dashboard")}>
+            <DashboardSidebarNavLink
+              href="/dashboard"
+              active={isActive("/dashboard")}
+            >
               <HomeIcon className="mr-3 size-4 text-primary" />
               Criar
             </DashboardSidebarNavLink>
-            <DashboardSidebarNavLink href="" active={isActive("/chat")}>
+            <DashboardSidebarNavLink
+              href="/dashboard/overview"
+              active={isActive("/dashboard/overview")}
+            >
               <FolderClosedIcon className="mr-3 size-4 text-primary" />
               Visualizar
             </DashboardSidebarNavLink>
-            <DashboardSidebarNavLink href="" active={isActive("/settings")}>
+            <DashboardSidebarNavLink
+              href="/dashboard/settings"
+              active={isActive("/dashboard/settings")}
+            >
               <SettingsIcon className="mr-3 size-4 text-primary" />
               Configurações
             </DashboardSidebarNavLink>
@@ -66,10 +75,7 @@ const MainSidebar = () => {
         </DashboardSidebarNavMain>
       </DashboardSidebarNav>
       <DashboardSidebarFooter>
-        <Link href="/" className="flex items-center">
-          <LogOut className="mr-2 size-4" />
-          Sair
-        </Link>
+        <UserDropdown />
       </DashboardSidebarFooter>
     </DashboardSidebar>
   );

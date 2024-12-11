@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import MainSidebar from "./_components/main-sidebar";
+import MainSidebar from "./_components/sidebar";
 
 export default async function Layout({ children }: PropsWithChildren) {
   return (
